@@ -1,203 +1,211 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" type="text/css" href="./css/aui.css" />
-		<meta charset="utf-8">
-		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-		<meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-		<title>登陆</title>
-		<link rel="stylesheet" type="text/css" href="./css/api.css"/>
-		<style>
-			body {
-				background-color: #FFFFFF;
-			}
-			.aui-bar-primary {
-				background-color: #FFFFFF;
-				color: #000000;
-				font-size: 14px;
-			}
-			.aui-bar .aui-iconfont {
-				position: relative;
-				z-index: 20;
-				font-size: 20px;
-				color: #000000;
-				font-size: 400;
-				line-height: 45px;
-			}
-			.form {
-				width: 280px;
-				margin: auto;
-				margin-top: 60px;
-			}
-			.aui-btn-rows {
-				position: 0;
-				text-align: center;
-				padding: 0px;
-			}
-			.aui-input-addons {
-				float: right;
-				font-size: 14px;
-				margin-top: 20px;
-				color: #555555;
-			}
-			.aui-input-left {
-				float: left;
-				font-size: 14px;
-				margin-top: 20px;
-				color: #555555;
-			}
-			.aui-btn-primary{
-				line-height: 50px;
-				border-radius: 25px;
-				margin-top: 40px;
-			}
-		</style>
-	</head>
-	<body>
-		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
-			<a class="aui-pull-left"> <span class="aui-iconfont aui-icon-left" onClick="gb()"></span> </a>
-			<div class="aui-title">
-				登录
-			</div>
-		</header>
-		<div class="form">
-			<div class="aui-content aui-margin-b-15">
-				<ul class="aui-list aui-form-list">
-					<li class="aui-list-item">
-						<div class="aui-list-item-inner">
-							<div class="aui-list-item-label-icon">
-								<i class="aui-iconfont aui-icon-mobile"></i>
-							</div>
-							<div class="aui-list-item-input">
-								<input type="text" placeholder="username">
-							</div>
-						</div>
-					</li>
-					<li class="aui-list-item">
-						<div class="aui-list-item-inner">
-							<div class="aui-list-item-label-icon">
-								<i class="aui-iconfont aui-icon-lock"></i>
-							</div>
-							<div class="aui-list-item-input">
-								<input type="password" placeholder="password">
-							</div>
-							<div class="aui-list-item-label-icon">
-								<i class="aui-iconfont aui-icon-display"></i>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="aui-btn-rows" onclick="login()">
-				<div class="aui-btn aui-btn-primary aui-btn-block">
-					登 陆
-				</div>
-			</div>
-			<div class="aui-btn-rows">
-				<span class="aui-input-left" onClick="register()">快速注册</span>
-				<span class="aui-input-addons" onClick="zhmm()">忘记密码？</span>
-			</div>
-		</div>
-	</body>
-	<script type="text/javascript" src="./script/api.js"></script>
-	<script type="text/javascript">
-		apiready = function() {
-			api.parseTapmode();
-			var header = $api.byId('header');
-			$api.fixStatusBar(header);
-			var headerPos = $api.offset(header);
-			var body_h = $api.offset($api.dom('body')).h;
-		}
-		function gb() {
-			api.closeWin();
-		}
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/aui.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>登陆</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css"/>
+    <style>
+        body {
+            background-color: #FFFFFF;
+        }
 
-		//注册账号
-		function register() {
-			api.openWin({
-				name : 'zhmm',
-				url : './html/register.html',
-				animation : {
-					type : "push", //动画类型（详见动画类型常量）
-					duration : 400 //动画过渡时间，默认300毫秒
-				}
-			});
-		}
+        .aui-bar-primary {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 14px;
+        }
 
-		//找回密码
-		function zhmm() {
-			api.openWin({
-				name : 'zhmm',
-				url : './html/pwd_back.html',
-				animation : {
-					type : "push", //动画类型（详见动画类型常量）
-					duration : 400 //动画过渡时间，默认300毫秒
-				}
-			});
-		}
-		function login(){
-			api.openWin({
-				name : 'user',
-				url : './html/user_common.html',
-				animation : {
-					type : "push", //动画类型（详见动画类型常量）
-					duration : 400 //动画过渡时间，默认300毫秒
-				}
-			});
-		}
+        .aui-bar .aui-iconfont {
+            position: relative;
+            z-index: 20;
+            font-size: 20px;
+            color: #000000;
+            font-size: 400;
+            line-height: 45px;
+        }
 
-		//前端登陆代码
-//		function login() {
-//			var email = $api.val($api.byId('email'));
-//			//获取表单内容
-//			var password = $api.val($api.byId('password'));
-//			//获取表单内容
-//			api.ajax({
-//				url : OpenAPI.login,
-//				method : 'post',
-//				timeout : 30,
-//				dataType : 'json',
-//				returnAll : false,
-//				data : {
-//					values : {
-//						email : email,
-//						password : password
-//					}
-//				}
-//			}, function(ret, err) {
-//				//开始判断用户操作
-//				if (email.length == 0) { {
-//						api.toast({
-//							msg : '用户名不能为空！'
-//						});
-//					}
-//				} else if (password.length == 0) { {
-//						api.toast({
-//							msg : '密码不能为空！'
-//						});
-//					}
-//				} else if (ret.status == 1) { {
-//						api.toast({
-//							msg : '登陆成功！'
-//						});
-//					}
-//				} else if (ret.status == 0) { {
-//						api.toast({
-//							msg : '邮箱或者密码错误！'
-//						});
-//					}
-//				} else if (ret.status == 2) { {
-//						api.toast({
-//							msg : '该邮箱没有注册！'
-//						});
-//					}
-//				} else if (err) { {
-//						api.toast({
-//							msg : ('错误码：' + err.code + '；错误信息：' + err.msg + '；网络状态码：' + err.statusCode)
-//						});
-//					}
-//				}
-//			});
-//		}
-	</script>
+        .form {
+            width: 280px;
+            margin: auto;
+            margin-top: 60px;
+        }
+
+        .aui-btn-rows {
+            position: 0;
+            text-align: center;
+            padding: 0px;
+        }
+
+        .aui-input-addons {
+            float: right;
+            font-size: 14px;
+            margin-top: 20px;
+            color: #555555;
+        }
+
+        .aui-input-left {
+            float: left;
+            font-size: 14px;
+            margin-top: 20px;
+            color: #555555;
+        }
+
+        .aui-btn-primary {
+            line-height: 50px;
+            border-radius: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+    <a class="aui-pull-left"> <span class="aui-iconfont aui-icon-left" onClick="gb()"></span> </a>
+    <div class="aui-title">
+        登录
+    </div>
+</header>
+<div class="form">
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-mobile"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="username">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-lock"></i>
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="password" placeholder="password">
+                    </div>
+                    <div class="aui-list-item-label-icon">
+                        <i class="aui-iconfont aui-icon-display"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="aui-btn-rows" onclick="login()">
+        <div class="aui-btn aui-btn-primary aui-btn-block">
+            登 陆
+        </div>
+    </div>
+    <div class="aui-btn-rows">
+        <span class="aui-input-left" onClick="register()">快速注册</span>
+        <span class="aui-input-addons" onClick="zhmm()">忘记密码？</span>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+    apiready = function () {
+        api.parseTapmode();
+        var header = $api.byId('header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+    }
+    function gb() {
+        api.closeWin();
+    }
+
+    //注册账号
+    function register() {
+        api.openWin({
+            name: 'zhmm',
+            url: './html/register.html',
+            animation: {
+                type: "push", //动画类型（详见动画类型常量）
+                duration: 400 //动画过渡时间，默认300毫秒
+            }
+        });
+    }
+
+    //找回密码
+    function zhmm() {
+        api.openWin({
+            name: 'zhmm',
+            url: './html/pwd_back.html',
+            animation: {
+                type: "push", //动画类型（详见动画类型常量）
+                duration: 400 //动画过渡时间，默认300毫秒
+            }
+        });
+    }
+    function login() {
+        api.openWin({
+            name: 'user',
+            url: './html/user_common.html',
+            animation: {
+                type: "push", //动画类型（详见动画类型常量）
+                duration: 400 //动画过渡时间，默认300毫秒
+            }
+        });
+    }
+
+    //前端登陆代码
+    //		function login() {
+    //			var email = $api.val($api.byId('email'));
+    //			//获取表单内容
+    //			var password = $api.val($api.byId('password'));
+    //			//获取表单内容
+    //			api.ajax({
+    //				url : OpenAPI.login,
+    //				method : 'post',
+    //				timeout : 30,
+    //				dataType : 'json',
+    //				returnAll : false,
+    //				data : {
+    //					values : {
+    //						email : email,
+    //						password : password
+    //					}
+    //				}
+    //			}, function(ret, err) {
+    //				//开始判断用户操作
+    //				if (email.length == 0) { {
+    //						api.toast({
+    //							msg : '用户名不能为空！'
+    //						});
+    //					}
+    //				} else if (password.length == 0) { {
+    //						api.toast({
+    //							msg : '密码不能为空！'
+    //						});
+    //					}
+    //				} else if (ret.status == 1) { {
+    //						api.toast({
+    //							msg : '登陆成功！'
+    //						});
+    //					}
+    //				} else if (ret.status == 0) { {
+    //						api.toast({
+    //							msg : '邮箱或者密码错误！'
+    //						});
+    //					}
+    //				} else if (ret.status == 2) { {
+    //						api.toast({
+    //							msg : '该邮箱没有注册！'
+    //						});
+    //					}
+    //				} else if (err) { {
+    //						api.toast({
+    //							msg : ('错误码：' + err.code + '；错误信息：' + err.msg + '；网络状态码：' + err.statusCode)
+    //						});
+    //					}
+    //				}
+    //			});
+    //		}
+</script>
 </html>

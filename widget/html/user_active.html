@@ -1,70 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../css/aui.css" />
-	<meta charset="utf-8">
-    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>title</title>
     <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css"/>
     <style>
-    	body{
-    		
-    	}
+        body {
+
+        }
     </style>
-	<link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
-	<script type="text/javascript" src="../script/aui-slide.js"></script>
-	<script type="text/javascript">
-		var slide = new auiSlide({
-			container:document.getElementById("aui-slide"),
-			// "width":300,
-			"height":260,
-			"speed":300,
-			"pageShow":true,
-			"pageStyle":'dot',
-			"loop":true,
-			'dotPosition':'center',
-			currentPage:currentFun
-		})
-		// 当前页
-		function currentFun(index) {
-			console.log(index);
-		}
-		// 获取总页数
-		console.log(slide3.pageCount());
-	</script>
 </head>
 <body>
-
-	<div class="aui-card">
-		<ul class="aui-list-view">
-			<li class="aui-list-view-cell aui-img">
-				<img class="aui-img-object aui-pull-left" src="../image/aui/demo2.png">
-				<div class="aui-img-body">
-					图文列表
-					<p class="aui-ellipsis-2">图文列表缩略图在左边的样式，默认大小为80PX，文字介绍内容可以为一行也可以为两行，超出部分自动省略</p>
-				</div>
-			</li>
-			<li class="aui-list-view-cell aui-img">
-				<div class="aui-img-body">
-					图文列表
-					<p class="aui-ellipsis-2">图文列表缩略图在左边的样式，默认大小为80PX，文字介绍内容可以为一行也可以为两行，超出部分自动省略</p>
-				</div>
-			</li>
-			<li class="aui-list-view-cell aui-img">
-				<img class="aui-img-object aui-pull-right" src="../image/aui/demo6.png">
-				<div class="aui-img-body">
-					图文列表
-					<p class="aui-ellipsis-2">图文列表缩略图在左边的样式，默认大小为80PX，文字介绍内容可以为一行也可以为两行，超出部分自动省略</p>
-				</div>
-			</li>
-		</ul>
-	</div>
+<div id="aui-slide3">
+    <div class="aui-slide-wrap">
+        <div class="aui-slide-node bg-dark">
+            <img src="../image/aui/demo1.png"/>
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <img src="../image/aui/demo2.png"/>
+        </div>
+        <div class="aui-slide-node bg-dark">
+            <img src="../image/aui/demo3.png"/>
+        </div>
+    </div>
+    <div class="aui-slide-page-wrap"><!--分页容器--></div>
+</div>
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-	apiready = function(){
-		
-	};
+    apiready = function () {
+
+    };
+</script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript">
+    var slide3 = new auiSlide({
+        container: document.getElementById("aui-slide3"),
+        // "width":300,
+        "height": 240,
+        "speed": 500,
+        "autoPlay": 3000, //自动播放
+        "loop": true,
+        "pageShow": true,
+        "pageStyle": 'line',
+        'dotPosition': 'center'
+    })
+    console.log(slide3.pageCount());
 </script>
 </html>

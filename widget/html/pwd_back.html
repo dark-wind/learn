@@ -1,83 +1,89 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-		<title>忘记密码</title>
-		<link rel="stylesheet" type="text/css" href="../css/aui-win.css" />
-		<link rel="stylesheet" type="text/css" href="../css/aui.css" />
-	</head>
-	<style>
-		body {
-			background-color: #FFFFFF;
-		}
-		.aui-bar-primary {
-			background-color: #FFFFFF;
-			color: #000000;
-			font-size: 14px;
-		}
-		.aui-bar .aui-iconfont {
-			position: relative;
-			z-index: 20;
-			font-size: 20px;
-			color: #000000;
-			font-size: 400;
-			line-height: 45px;
-		}
-		.form {
-			width: 280px;
-			margin: auto;
-			margin-top: 60px;
-		}
-		.aui-bar .aui-iconfont {
-			position: relative;
-			z-index: 20;
-			font-size: 20px;
-			color: #000000;
-			font-size: 400;
-			line-height: 45px;
-		}
-		.aui-btn-primary{
-			line-height: 50px;
-			border-radius: 25px;
-			margin-top: 40px;
-		}
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		  content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<title>忘记密码</title>
+	<link rel="stylesheet" type="text/css" href="../css/aui-win.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+</head>
+<style>
+	body {
+		background-color: #FFFFFF;
+	}
+
+	.aui-bar-primary {
+		background-color: #FFFFFF;
+		color: #000000;
+		font-size: 14px;
+	}
+
+	.aui-bar .aui-iconfont {
+		position: relative;
+		z-index: 20;
+		font-size: 20px;
+		color: #000000;
+		font-size: 400;
+		line-height: 45px;
+	}
+
+	.form {
+		width: 280px;
+		margin: auto;
+		margin-top: 60px;
+	}
+
+	.aui-bar .aui-iconfont {
+		position: relative;
+		z-index: 20;
+		font-size: 20px;
+		color: #000000;
+		font-size: 400;
+		line-height: 45px;
+	}
+
+	.aui-btn-primary {
+		line-height: 50px;
+		border-radius: 25px;
+		margin-top: 40px;
+	}
 
 
-	</style>
-	<body>
-		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
-			<a class="aui-pull-left"> <span class="aui-iconfont aui-icon-left" onClick="gb()"></span> </a>
-			<div class="aui-title">
-				忘记密码
-			</div>
-		</header>
-		<div class="form">
-			<div class="aui-content aui-margin-b-15">
-				<ul class="aui-list aui-form-list">
-					<li class="aui-list-item">
-						<div class="aui-list-item-inner">
-							<div class="aui-list-item-label-icon">
-								<i class="aui-iconfont aui-icon-mail"></i>
-							</div>
-							<div class="aui-list-item-input">
-								<input type="text" placeholder="请输入注册邮箱">
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="aui-btn-rows">
-				<div class="aui-btn aui-btn-primary aui-btn-block">
-					重置密码
+</style>
+<body>
+<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
+	<a class="aui-pull-left"> <span class="aui-iconfont aui-icon-left" onClick="gb()"></span> </a>
+	<div class="aui-title">
+		忘记密码
+	</div>
+</header>
+<div class="form">
+	<div class="aui-content aui-margin-b-15">
+		<ul class="aui-list aui-form-list">
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label-icon">
+						<i class="aui-iconfont aui-icon-mail"></i>
+					</div>
+					<div class="aui-list-item-input">
+						<input type="text" placeholder="请输入注册邮箱">
+					</div>
 				</div>
-			</div>
+			</li>
+		</ul>
+	</div>
+	<div class="aui-btn-rows">
+		<div class="aui-btn aui-btn-primary aui-btn-block">
+			重置密码
 		</div>
-	</body>
+	</div>
+</div>
+</body>
 </html>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-	apiready = function() {
+	apiready = function () {
 		api.parseTapmode();
 		var header = $api.byId('header');
 		$api.fixStatusBar(header);
