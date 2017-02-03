@@ -12,9 +12,30 @@
     		
     	}
     </style>
+	<link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+	<script type="text/javascript" src="../script/aui-slide.js"></script>
+	<script type="text/javascript">
+		var slide = new auiSlide({
+			container:document.getElementById("aui-slide"),
+			// "width":300,
+			"height":260,
+			"speed":300,
+			"pageShow":true,
+			"pageStyle":'dot',
+			"loop":true,
+			'dotPosition':'center',
+			currentPage:currentFun
+		})
+		// 当前页
+		function currentFun(index) {
+			console.log(index);
+		}
+		// 获取总页数
+		console.log(slide3.pageCount());
+	</script>
 </head>
 <body>
-	
+
 	<div class="aui-card">
 		<ul class="aui-list-view">
 			<li class="aui-list-view-cell aui-img">

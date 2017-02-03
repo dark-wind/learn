@@ -29,18 +29,21 @@
 			margin: auto;
 			margin-top: 60px;
 		}
-		.aui-btn-rows {
-			position: 0;
-			text-align: center;
-			padding: 0px;
+		.aui-bar .aui-iconfont {
+			position: relative;
+			z-index: 20;
+			font-size: 20px;
+			color: #000000;
+			font-size: 400;
+			line-height: 45px;
 		}
-		.aui-btn-success {
-			width: 280px;
-			height: 45px;
-			line-height: 30px;
+		.aui-btn-primary{
+			line-height: 50px;
 			border-radius: 25px;
 			margin-top: 40px;
 		}
+
+
 	</style>
 	<body>
 		<header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
@@ -50,12 +53,22 @@
 			</div>
 		</header>
 		<div class="form">
-			<div class="aui-input-row">
-				<label class="aui-input-addon">邮箱</label>
-				<input type="number" class="aui-input" placeholder="请输入注册邮箱"/>
+			<div class="aui-content aui-margin-b-15">
+				<ul class="aui-list aui-form-list">
+					<li class="aui-list-item">
+						<div class="aui-list-item-inner">
+							<div class="aui-list-item-label-icon">
+								<i class="aui-iconfont aui-icon-mail"></i>
+							</div>
+							<div class="aui-list-item-input">
+								<input type="text" placeholder="请输入注册邮箱">
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 			<div class="aui-btn-rows">
-				<div class="aui-btn aui-btn-success">
+				<div class="aui-btn aui-btn-primary aui-btn-block">
 					重置密码
 				</div>
 			</div>

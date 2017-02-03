@@ -19,7 +19,11 @@
 		text-align: center;
 		padding:0px;
 	}
-	.aui-btn-success{ width:280px; height:45px; line-height:30px; border-radius: 25px; margin-top:40px;}
+	.aui-btn-primary{
+		line-height: 50px;
+		border-radius: 25px;
+		margin-top: 40px;
+	}
 
 </style>
 <body>
@@ -30,33 +34,67 @@
 	<div class="aui-title">注册</div>
 </header>
 
-
 <div class="form">
-	<div class="aui-input-row">
-		<label class="aui-input-addon">类型</label>
-		<div class="aui-pull-right">
-			<input class="aui-radio" type="radio" name="demo1" checked><div class="aui-radio-name">社员</div>
-			<input class="aui-radio" type="radio" name="demo1"><div class="aui-radio-name">会长</div>
-		</div>
-	</div>
-	<div class="aui-input-row">
-		<label class="aui-input-addon">账号</label>
-		<input type="number" class="aui-input" placeholder="请输入用户名"/>
-	</div>
-	<div class="aui-input-row">
-		<span class="aui-input-addon">密码</span>
-		<input type="password" class="aui-input" placeholder="请输入密码"/>
-	</div>
-	<div class="aui-input-row">
-		<label class="aui-input-addon">邮箱</label>
-		<input type="number" class="aui-input" placeholder="用于找回密码"/>
-	</div>
-	<div class="aui-input-row">
-		<span class="aui-input-addon">昵称</span>
-		<input type="password" class="aui-input" placeholder="请输入昵称"/>
+	<div class="aui-content aui-margin-b-15">
+		<ul class="aui-list aui-form-list">
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label">
+						类型
+					</div>
+					<div class="aui-list-item-input">
+						<label><input class="aui-radio" type="radio" name="demo1" checked> 社员</label>
+						<label><input class="aui-radio" type="radio" name="demo1"> 会长</label>
+					</div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label">
+						账号
+					</div>
+					<div class="aui-list-item-input">
+						<input type="text" placeholder="请输入用户名">
+					</div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label">
+						密码
+					</div>
+					<div class="aui-list-item-input">
+						<input type="password" placeholder="请输入密码">
+					</div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label">
+						邮箱
+					</div>
+					<div class="aui-list-item-input">
+						<input type="text" placeholder="用于找回密码">
+					</div>
+				</div>
+			</li>
+			<li class="aui-list-item">
+				<div class="aui-list-item-inner">
+					<div class="aui-list-item-label">
+						昵称
+					</div>
+					<div class="aui-list-item-input">
+						<input type="text" placeholder="请输入昵称">
+					</div>
+				</div>
+			</li>
+
+		</ul>
 	</div>
 	<div class="aui-btn-rows">
-		<div class="aui-btn aui-btn-success">注 册</div>
+		<div class="aui-btn aui-btn-primary aui-btn-block">
+			注 册
+		</div>
 	</div>
 </div>
 
