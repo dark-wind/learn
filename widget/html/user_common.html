@@ -14,24 +14,19 @@
     </style>
 </head>
 <body>
-<header class="aui-bar aui-bar-nav aui-bar-primary" style="margin-bottom:5px;">
-    <div class="aui-title">
-        顶部导航栏
-    </div>
-    <a class="aui-pull-right"> <span class="aui-iconfont aui-icon-repair"></span> </a>
-</header>
+
 <footer class="aui-bar aui-bar-tab" id="footer">
     <div class="aui-bar-tab-item" onclick="active()" tapmode>
         <i class="aui-iconfont aui-icon-star"></i>
         <div class="aui-bar-tab-label">热门活动</div>
     </div>
     <div class="aui-bar-tab-item" onclick="mySociety()" tapmode>
-        <i class="aui-iconfont aui-icon-comment"></i>
+        <i class="aui-iconfont aui-icon-like"></i>
         <div class="aui-bar-tab-label">我的社团</div>
     </div>
-    <div class="aui-bar-tab-item" onclick="societyList()" tapmode>
-        <i class="aui-iconfont aui-icon-like"></i>
-        <div class="aui-bar-tab-label">社团云</div>
+    <div class="aui-bar-tab-item" onclick="message()" tapmode>
+        <i class="aui-iconfont aui-icon-comment"></i>
+        <div class="aui-bar-tab-label">消息</div>
     </div>
     <div class="aui-bar-tab-item" onclick="info()" tapmode>
         <i class="aui-iconfont aui-icon-my"></i>
@@ -52,7 +47,7 @@
             url: 'user_active.html',
             rect: {
                 x: 0,
-                y: 45,
+                y: 0,
                 w: 'auto',
                 h: api.frameHeight - 45 - footerPos.h
             },
@@ -72,7 +67,7 @@
             url: 'user_my_society.html',
             rect: {
                 x: 0,
-                y: 45,
+                y: 0,
                 w: 'auto',
                 h: api.frameHeight - 45 - footerPos.h
             },
@@ -84,20 +79,20 @@
         changeIndexFrame(1);
     }
     /**
-     * 社团云
+     * 消息
      */
-    function societyList() {
+    function message() {
         api.openFrame({
             name: 'societylist',
-            url: 'user_my_society.html',
+            url: 'user_message.html',
             rect: {
                 x: 0,
-                y: 45,
+                y: 0,
                 w: 'auto',
                 h: api.frameHeight - 45 - footerPos.h
             },
             pageParam: {
-                name: 'societylist'
+                name: 'message'
             },
             bounces: true
         });
@@ -109,15 +104,15 @@
     function info() {
         api.openFrame({
             name: 'mysociety',
-            url: 'user_my_society.html',
+            url: 'user_info.html',
             rect: {
                 x: 0,
-                y: 45,
+                y: 0,
                 w: 'auto',
                 h: api.frameHeight - 45 - footerPos.h
             },
             pageParam: {
-                name: 'mysociety'
+                name: 'info'
             },
             bounces: true
         });
