@@ -54,7 +54,7 @@
             pageParam: {
                 name: 'active'
             },
-            bounces: true
+            bounces: false
         });
         changeIndexFrame(0);
     }
@@ -74,7 +74,7 @@
             pageParam: {
                 name: 'mysociety'
             },
-            bounces: true
+            bounces: false
         });
         changeIndexFrame(1);
     }
@@ -94,7 +94,7 @@
             pageParam: {
                 name: 'message'
             },
-            bounces: true
+            bounces: false
         });
         changeIndexFrame(2);
     }
@@ -114,13 +114,12 @@
             pageParam: {
                 name: 'info'
             },
-            bounces: true
+            bounces: false
         });
         changeIndexFrame(3);
     }
     //导航节点获取
     var aFooterList = $api.domAll('#footer .aui-bar-tab-item');
-    console.log(aFooterList);
     /**
      * 底部导航切换
      * @param index

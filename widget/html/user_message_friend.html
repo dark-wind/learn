@@ -19,8 +19,8 @@
     消息
 </header>
 <div class="aui-bar aui-bar-btn aui-bar-btn-round" style="width:45%;">
-    <div class="aui-bar-btn-item aui-active">社团</div>
-    <div class="aui-bar-btn-item" onclick="messageFriend()">好友</div>
+    <div class="aui-bar-btn-item " onclick="messageSoicety()">社团</div>
+    <div class="aui-bar-btn-item aui-active">好友</div>
 </div>
 <section class="aui-content-padded">
     <div class="aui-card-list">
@@ -31,14 +31,13 @@
                         <div class="aui-list-item-media">
                             <img src="../image/aui/demo5.png" class="aui-img-round aui-list-img-sm">
                         </div>
-                        <div class="aui-list-item-inner aui-list-item-arrow">
+                        <div class="aui-list-item-inner ">
                             <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14">手游协会</div>
+                                <div class="aui-list-item-title aui-font-size-14">秦瑞</div>
                                 <div class="aui-list-item-right">9：17</div>
                             </div>
                             <div class="aui-list-item-text">
-                                关于今天下午6点在4教学楼大厅开会，商量本周
-                                的工作计划
+                                你好，我最近实在是没有时间，我们改天再约
                             </div>
                         </div>
                     </div>
@@ -48,21 +47,15 @@
                         <div class="aui-list-item-media">
                             <img src="../image/aui/demo5.png" class="aui-img-round aui-list-img-sm">
                         </div>
-                        <div class="aui-list-item-inner aui-list-item-arrow">
+                        <div class="aui-list-item-inner ">
                             <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14">吉他协会</div>
+                                <div class="aui-list-item-title aui-font-size-14">哈士奇</div>
                                 <div class="aui-list-item-right">9：17</div>
                             </div>
                             <div class="aui-list-item-text">
-                                事件
-                                讨论联谊事情
+                                约饭啦
                             </div>
                         </div>
-
-                    </div>
-                    <div class="aui-card-list-footer aui-border-t">
-                        <div> 时间 今天19:00</div>
-                        <div>地点 一教学楼302</div>
                     </div>
                 </li>
                 <li class="aui-list-item aui-list-item-middle">
@@ -70,26 +63,15 @@
                         <div class="aui-list-item-media">
                             <img src="../image/aui/demo5.png" class="aui-img-round aui-list-img-sm">
                         </div>
-                        <div class="aui-list-item-inner aui-list-item-arrow">
+                        <div class="aui-list-item-inner ">
                             <div class="aui-list-item-text">
-                                <div class="aui-list-item-title aui-font-size-14">吃货协会</div>
+                                <div class="aui-list-item-title aui-font-size-14">西撒</div>
                                 <div class="aui-list-item-right">9：17</div>
                             </div>
                             <div class="aui-list-item-text">
-                                主题
-                                一起聚餐一起喝酒开黑
-                                地点 四川大学小北门
-                                时间 2015-09-11 12:20
+                                约球不，老区。。
                             </div>
                         </div>
-                    </div>
-                    <div class="aui-card-list-footer aui-border-t">
-                        <p>
-                        <div class="aui-btn aui-btn-info">积极参与</div>
-                        </p>
-                        <p>
-                        <div class="aui-btn aui-btn-warning">残忍拒绝</div>
-                        </p>
                     </div>
                 </li>
             </ul>
@@ -100,25 +82,24 @@
 </body>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-
-    function messageFriend() {
+    function messageSoicety() {
         api.openFrame({
             name: 'active',
-            url: 'user_message_friend.html',
+            url: 'user_message.html',
             rect: {
                 x: 0,
                 y: 0,
                 w: 'auto',
-                h: 520 - 45
+                h: api.frameHeight - 45
             },
             pageParam: {
-                name: 'active'
+                name: 'message'
             },
             bounces: true
         });
     }
     apiready = function () {
-//        alert('message:'+api.frameHeight);
+//        alert('message_friend:'+api.frameHeight);
     };
 </script>
 </html>
