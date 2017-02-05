@@ -1,139 +1,289 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport"
-		  content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-	<title>会员注册</title>
-	<link rel="stylesheet" type="text/css" href="../css/aui-win.css"/>
-	<link rel="stylesheet" type="text/css" href="../css/aui.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>会员注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui-win.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css"/>
 </head>
 <style>
-	body {
-		background-color: #FFFFFF;
-	}
+    body {
+        background-color: #FFFFFF;
+    }
 
-	.aui-bar-primary {
-		background-color: #FFFFFF;
-		color: #000000;
-		font-size: 14px;
-	}
+    .aui-bar-primary {
+        background-color: #FFFFFF;
+        color: #000000;
+        font-size: 14px;
+    }
 
-	.aui-bar .aui-iconfont {
-		position: relative;
-		z-index: 20;
-		font-size: 20px;
-		color: #000000;
-		font-size: 400;
-		line-height: 45px;
-	}
+    .aui-bar .aui-iconfont {
+        position: relative;
+        z-index: 20;
+        font-size: 20px;
+        color: #000000;
+        font-size: 400;
+        line-height: 45px;
+    }
 
-	.form {
-		width: 280px;
-		margin: auto;
-		margin-top: 60px;
-	}
+    .form {
+        width: 280px;
+        margin: auto;
+        margin-top: 60px;
+    }
 
-	.aui-btn-rows {
-		position: 0;
-		text-align: center;
-		padding: 0px;
-	}
+    .aui-btn-rows {
+        position: 0;
+        text-align: center;
+        padding: 0px;
+    }
 
-	.aui-btn-primary {
-		line-height: 50px;
-		border-radius: 25px;
-		margin-top: 40px;
-	}
+    .aui-btn-primary {
+        line-height: 50px;
+        border-radius: 25px;
+        margin-top: 40px;
+    }
 
 </style>
 <body>
 <header class="aui-bar aui-bar-nav aui-bar-primary" id="header">
-	<a class="aui-pull-left">
-		<span class="aui-iconfont aui-icon-left" onClick="gb()"></span>
-	</a>
-	<div class="aui-title">注册</div>
+    <a class="aui-pull-left">
+        <span class="aui-iconfont aui-icon-left" onClick="gb()"></span>
+    </a>
+    <div class="aui-title">注册</div>
 </header>
 
 <div class="form">
-	<div class="aui-content aui-margin-b-15">
-		<ul class="aui-list aui-form-list">
-			<li class="aui-list-item">
-				<div class="aui-list-item-inner">
-					<div class="aui-list-item-label">
-						类型
-					</div>
-					<div class="aui-list-item-input">
-						<label><input class="aui-radio" type="radio" name="demo1" checked> 社员</label>
-						<label><input class="aui-radio" type="radio" name="demo1"> 会长</label>
-					</div>
-				</div>
-			</li>
-			<li class="aui-list-item">
-				<div class="aui-list-item-inner">
-					<div class="aui-list-item-label">
-						账号
-					</div>
-					<div class="aui-list-item-input">
-						<input type="text" placeholder="请输入用户名">
-					</div>
-				</div>
-			</li>
-			<li class="aui-list-item">
-				<div class="aui-list-item-inner">
-					<div class="aui-list-item-label">
-						密码
-					</div>
-					<div class="aui-list-item-input">
-						<input type="password" placeholder="请输入密码">
-					</div>
-				</div>
-			</li>
-			<li class="aui-list-item">
-				<div class="aui-list-item-inner">
-					<div class="aui-list-item-label">
-						邮箱
-					</div>
-					<div class="aui-list-item-input">
-						<input type="text" placeholder="用于找回密码">
-					</div>
-				</div>
-			</li>
-			<li class="aui-list-item">
-				<div class="aui-list-item-inner">
-					<div class="aui-list-item-label">
-						昵称
-					</div>
-					<div class="aui-list-item-input">
-						<input type="text" placeholder="请输入昵称">
-					</div>
-				</div>
-			</li>
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        类型
+                    </div>
+                    <div class="aui-list-item-input">
+                        <label><input class="aui-radio" type="radio" name="demo1" checked> 社员</label>
+                        <label><input class="aui-radio" type="radio" name="demo1"> 会长</label>
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        账号
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" id="username" placeholder="请输入手机号码">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        密码
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="password" id="password" placeholder="请输入密码">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        邮箱
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" id="mail" placeholder="用于找回密码">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        昵称
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" id="nickname" placeholder="请输入昵称">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <input type="text" id="code" placeholder="验证码">
+                    <div class="aui-btn aui-btn-danger aui-margin-l-5" onclick="sendSms(this)">点我获取验证码</div>
+                </div>
+            </li>
 
-		</ul>
-	</div>
-	<div class="aui-btn-rows">
-		<div class="aui-btn aui-btn-primary aui-btn-block">
-			注 册
-		</div>
-	</div>
+        </ul>
+    </div>
+    <div class="aui-btn-rows">
+        <div class="aui-btn aui-btn-primary aui-btn-block" onclick="verify()">
+            注 册
+        </div>
+    </div>
 </div>
 
 </body>
 </html>
 <script type="text/javascript" src="../script/api.js"></script>
 <script type="text/javascript">
-	apiready = function () {
-		api.parseTapmode();
-		var header = $api.byId('header');
-		$api.fixStatusBar(header);
-		var headerPos = $api.offset(header);
-		var body_h = $api.offset($api.dom('body')).h;
-	}
+    apiready = function () {
+        api.parseTapmode();
+        var header = $api.byId('header');
+        $api.fixStatusBar(header);
+        var headerPos = $api.offset(header);
+        var body_h = $api.offset($api.dom('body')).h;
+        //注册短信发送
+        var smsVerify = api.require('smsVerify');
+        smsVerify.register(function (ret, err) {
+            if (ret.status) {
+                //api.alert({msg: '注册成功'});
+            } else {
+                api.alert({msg: err.code + ' 注册失败'});
+            }
+        });
+    }
+    //重新发送
+    var wait = 60;
+    function time(o) {
+        if (wait == 0) {
+            o.onclick = function () {
+                sendSms(o);
+            }
+            o.innerHTML = "获取验证码";
+            wait = 60;
+        } else {
+            o.onclick = function () {
+                return false;
+            };
+            o.innerHTML = "重新发送(" + wait + ")";
+            wait--;
+            setTimeout(function () {
+                time(o)
+            }, 1000)
+        }
+    }
+    // 发短信验证码
+    function sendSms(o) {
+        setTimeout(function () {
+            var username = $api.byId("username").value;
+            if (username != null && username.length == 11) {
+                time(o);
+                smsVerify.sms({
+                    phone: username,
+                }, function (ret, err) {
+                    if (ret.status) {
+                        api.toast({
+                            msg: '发送成功'
+                        });
+                    } else {
+                        api.toast({
+                            msg: JSON.stringify(err)
+                        });
+                    }
+                });
+            } else {
+                api.toast({
+                    msg: '手机号输入有误！'
+                });
+            }
 
-	function gb() {
-		api.closeWin();
-	}
+        }, 1000)
+    }
+    //注册
+    function verify() {
+        api.showProgress({
+            title: '注册中...',
+            modal: false
+        });
+        var username = $api.byId("username").value;
+        var password = $api.byId('password').value;
+        var mail = $api.byId('mail').value;
+        var code = $api.byId('code').value;
+        if (!username) {
+            api.alert({
+                msg: '请输入账号'
+            }, function (ret, err) {
+                api.hideProgress();
+            });
+            return;
+        }
+        if (!password) {
+            api.alert({
+                msg: '请输入密码'
+            }, function (ret, err) {
+                api.hideProgress();
+            });
+            return;
+        }
+        if (!mail) {
+            api.alert({
+                msg: '请输入邮箱'
+            }, function (ret, err) {
+                api.hideProgress();
+            });
+            return;
+        }
+        if (!code) {
+            api.alert({
+                msg: '请输入验证码'
+            }, function (ret, err) {
+                api.hideProgress();
+            });
+            return;
+        }
+        if (username.length == 11 && password.length >= 6) {
+            smsVerify.verify({
+                phone: username,
+                code: code,
+            }, function (ret, err) {
+                if (ret.status) {
+                    api.showProgress({
+                        title: '注册中...',
+                        modal: false
+                    });
+                    var model = api.require('model');
+                    model.config({
+                        appKey: 'F1A1F000-5AF0-13B5-B924-187D430F6C2E'
+                    });
+                    model.insert({
+                        class: 'user',
+                        value: {
+                            username: username,
+                            password: password,
+                            email: mail,
+                            mobile: username
+                        }
+                    }, function (ret, err) {
+                        var msg = "";
+                        api.hideProgress();
+                        if (ret) {
+                            if (ret.username) {
+                                api.toast({
+                                    msg: '注册成功'
+                                });
+                                api.closeWin({});
+                            }
+                        }
+                    });
+                } else {
+                    api.alert({
+                        msg: ' 验证失败，请查看验证码是否正确！'
+                    });
+                }
+            });
+        } else {
+            api.alert({
+                msg: '手机号或密码格式不正确'
+            });
+        }
+        api.hideProgress();
+    }
+    function gb() {
+        api.closeWin();
+    }
 
 
 </script>
