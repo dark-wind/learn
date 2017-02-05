@@ -77,7 +77,7 @@
                         <i class="aui-iconfont aui-icon-mobile"></i>
                     </div>
                     <div class="aui-list-item-input">
-                        <input type="text" placeholder="username">
+                        <input type="text" id="username" placeholder="username">
                     </div>
                 </div>
             </li>
@@ -87,7 +87,7 @@
                         <i class="aui-iconfont aui-icon-lock"></i>
                     </div>
                     <div class="aui-list-item-input">
-                        <input type="password" placeholder="password">
+                        <input type="password" id="password" placeholder="password">
                     </div>
                     <div class="aui-list-item-label-icon">
                         <i class="aui-iconfont aui-icon-display"></i>
@@ -143,69 +143,59 @@
             }
         });
     }
-    function login() {
-        api.openWin({
-            name: 'user',
-            url: './html/user_common.html',
-            animation: {
-                type: "push", //动画类型（详见动画类型常量）
-                duration: 400 //动画过渡时间，默认300毫秒
-            }
-        });
-    }
+
 
     //前端登陆代码
-    //		function login() {
-    //			var email = $api.val($api.byId('email'));
-    //			//获取表单内容
-    //			var password = $api.val($api.byId('password'));
-    //			//获取表单内容
-    //			api.ajax({
-    //				url : OpenAPI.login,
-    //				method : 'post',
-    //				timeout : 30,
-    //				dataType : 'json',
-    //				returnAll : false,
-    //				data : {
-    //					values : {
-    //						email : email,
-    //						password : password
-    //					}
-    //				}
-    //			}, function(ret, err) {
-    //				//开始判断用户操作
-    //				if (email.length == 0) { {
-    //						api.toast({
-    //							msg : '用户名不能为空！'
-    //						});
-    //					}
-    //				} else if (password.length == 0) { {
-    //						api.toast({
-    //							msg : '密码不能为空！'
-    //						});
-    //					}
-    //				} else if (ret.status == 1) { {
-    //						api.toast({
-    //							msg : '登陆成功！'
-    //						});
-    //					}
-    //				} else if (ret.status == 0) { {
-    //						api.toast({
-    //							msg : '邮箱或者密码错误！'
-    //						});
-    //					}
-    //				} else if (ret.status == 2) { {
-    //						api.toast({
-    //							msg : '该邮箱没有注册！'
-    //						});
-    //					}
-    //				} else if (err) { {
-    //						api.toast({
-    //							msg : ('错误码：' + err.code + '；错误信息：' + err.msg + '；网络状态码：' + err.statusCode)
-    //						});
-    //					}
-    //				}
-    //			});
-    //		}
+    function login() {
+        var name = $api.byId('username').value;
+        var pwd = $api.byId('password').value;
+        if (name == "") {
+            api.toast({
+                msg: '请输入用户名！'
+            });
+            $api.byId('username').focus();
+            return;
+        }
+        if (pwd == "") {
+            api.toast({
+                msg: '请输入密码！'
+            });
+            $api.byId('password').focus();
+            return;
+        }
+        api.showProgress({
+            style: 'default',
+            animationType: 'fade',
+            title: '努力加载中...',
+            text: '先喝杯茶...',
+            modal: false
+        });
+        var model = api.require('model');
+        var user = api.require('user');
+        model.config({
+            appKey: 'F1A1F000-5AF0-13B5-B924-187D430F6C2E'
+        });
+        user.login({
+            username: name,
+            password: pwd
+        }, function (ret, err) {
+            if (ret) {
+                api.openWin({
+                    name: 'user',
+                    url: './html/user_common.html',
+                    animation: {
+                        type: "push", //动画类型（详见动画类型常量）
+                        duration: 400 //动画过渡时间，默认300毫秒
+                    }
+                });
+            } else {
+                alert('用户名或密码错误');
+            }
+        });
+        api.hideProgress();
+
+
+    }
+
 </script>
 </html>
