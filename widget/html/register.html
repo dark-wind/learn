@@ -138,12 +138,21 @@
         var headerPos = $api.offset(header);
         var body_h = $api.offset($api.dom('body')).h;
         //注册短信发送
-        var smsVerify = api.require('smsVerify');
+        smsVerify = api.require('smsVerify');
+        // 初始化
+        register();
+
+    }
+    function register() {
         smsVerify.register(function (ret, err) {
             if (ret.status) {
-                //api.alert({msg: '注册成功'});
+                api.alert({
+                    msg: ' 注册成功'
+                });
             } else {
-                api.alert({msg: err.code + ' 注册失败'});
+                api.alert({
+                    msg: err.code + ' 注册失败'
+                });
             }
         });
     }
