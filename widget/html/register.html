@@ -148,14 +148,14 @@
         });
     }
     //重新发送
-    var wait = 60;
+    var wait = 30;
     function time(o) {
         if (wait == 0) {
             o.onclick = function () {
                 sendSms(o);
             }
             o.innerHTML = "获取验证码";
-            wait = 60;
+            wait = 30;
         } else {
             o.onclick = function () {
                 return false;
@@ -177,6 +177,9 @@
                     phone: username,
                 }, function (ret, err) {
                     if (ret.status) {
+                        api.alert({
+                            msg: 'username:' + username + '||||status:' + ret.status
+                        });
                         api.toast({
                             msg: '发送成功'
                         });
