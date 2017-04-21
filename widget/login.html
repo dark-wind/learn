@@ -192,7 +192,7 @@
                             duration: 400 //动画过渡时间，默认300毫秒
                         }
                     });
-                } else {
+                } else if (ret.role == 'admin') {
                     api.openWin({
                         name: 'society',
                         url: './html/society/society_common.html',
@@ -201,6 +201,8 @@
                             duration: 400 //动画过渡时间，默认300毫秒
                         }
                     });
+                } else {
+                    api.alert({msg: JSON.stringify(ret.error)});
                 }
             } else {
                 api.alert({ msg: JSON.stringify(err) });
