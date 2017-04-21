@@ -183,7 +183,25 @@
             }
         }, function(ret, err) {
             if (ret) {
-                api.alert({ msg: ret.role });
+                if (ret.role == 'user') {
+                    api.openWin({
+                        name: 'user',
+                        url: './html/user/user_common.html',
+                        animation: {
+                            type: "push", //动画类型（详见动画类型常量）
+                            duration: 400 //动画过渡时间，默认300毫秒
+                        }
+                    });
+                } else {
+                    api.openWin({
+                        name: 'society',
+                        url: './html/society/society_common.html',
+                        animation: {
+                            type: "push", //动画类型（详见动画类型常量）
+                            duration: 400 //动画过渡时间，默认300毫秒
+                        }
+                    });
+                }
             } else {
                 api.alert({ msg: JSON.stringify(err) });
             }

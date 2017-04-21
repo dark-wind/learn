@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../css/aui.css"/>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../css/aui-slide.css"/>
+    <style>
+        body {
+
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>活动聚会</h1>
+    <div class="header-left">
+        <i class="icon-header-return"></i>
+    </div>
+    <div class="header-right">
+        <font>发布</font>
+    </div>
+</header>
+<div class="main">
+    <div class="hmc-tdgn-act-pub">
+        <div class="hmc-tdgn-act-pub-top">
+            <input type="text" placeholder="主题（请用4-20字描述你的话题）"/>
+            <div class="activity-list-icon">
+                <ul>
+                    <li>
+                        <div class="jucan">
+                            <i></i>
+                        </div>
+                        <span>
+						<font>聚餐</font>
+					</span>
+                    </li>
+                    <li>
+                        <div class="yepao">
+                            <i></i>
+                        </div>
+                        <span>
+						<font>夜跑</font>
+					</span>
+                    </li>
+                    <li>
+                        <div class="lianyi">
+                            <i></i>
+                        </div>
+                        <span>
+						<font>联谊</font>
+					</span>
+                    </li>
+                    <li>
+                        <div class="ktv">
+                            <i></i>
+                        </div>
+                        <span>
+						<font>KTV</font>
+					</span>
+                    </li>
+
+                </ul>
+                <i></i>
+            </div>
+
+            <input type="text" placeholder="地点"/>
+            <input type="text" placeholder="时间"/>
+        </div>
+        <div class="pfp-text-area">
+            <textarea name="pfp-text" placeholder="正文，简述内容"></textarea>
+            <span></span>
+        </div>
+        <ul>
+            <li><font>发布对象</font><i class="hmc-right-arrows"></i>
+            </li>
+            <li><font>费用选项</font><i class="hmc-right-arrows"></i>
+            </li>
+            <li><font>截止日期</font><i class="hmc-right-arrows"></i>
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript">
+    apiready = function () {
+
+    };
+</script>
+<script type="text/javascript" src="../../script/aui-slide.js"></script>
+<script type="text/javascript">
+    var slide3 = new auiSlide({
+        container: document.getElementById("aui-slide3"),
+        // "width":300,
+        "height": 240,
+        "speed": 500,
+        "autoPlay": 3000, //自动播放
+        "loop": true,
+        "pageShow": true,
+        "pageStyle": 'line',
+        'dotPosition': 'center'
+    })
+    console.log(slide3.pageCount());
+</script>
+</html>
