@@ -183,7 +183,7 @@
             }
         }, function(ret, err) {
             if (ret) {
-                api.alert({ msg: JSON.stringify(ret) });
+                api.alert({ msg: ret.role });
             } else {
                 api.alert({ msg: JSON.stringify(err) });
             }
