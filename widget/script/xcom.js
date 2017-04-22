@@ -43,7 +43,7 @@ function login() {
     }, function (ret, err) {
         if (ret) {
             //todo 删除
-            ret.role = 'admin';
+            ret.role = 'user';
             if (ret.role == 'user') {
                 api.openWin({
                     name: 'user',
@@ -109,7 +109,6 @@ function societyCreate() {
             },
         }
     }, function (ret, err) {
-        api.alert({msg: ret.msg});
         if (ret) {
             if (ret.code == 'ok') {
                 api.openWin({
