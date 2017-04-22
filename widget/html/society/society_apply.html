@@ -16,82 +16,90 @@
     </style>
 </head>
 <body>
-<header>
-    <h1>活动聚会</h1>
+<header class="aui-bar aui-bar-nav aui-bar-light">
+    <h1>创建团队</h1>
     <div class="header-left">
         <i class="icon-header-return"></i>
     </div>
     <div class="header-right">
-        <font>发布</font>
+        <font onclick="societyCreate()">创建</font>
     </div>
 </header>
+
 <div class="main">
-    <div class="hmc-tdgn-act-pub">
-        <div class="hmc-tdgn-act-pub-top">
-            <input type="text" placeholder="主题（请用4-20字描述你的话题）"/>
-            <div class="activity-list-icon">
-                <ul>
-                    <li>
-                        <div class="jucan">
-                            <i></i>
-                        </div>
-                        <span>
-						<font>聚餐</font>
-					</span>
-                    </li>
-                    <li>
-                        <div class="yepao">
-                            <i></i>
-                        </div>
-                        <span>
-						<font>夜跑</font>
-					</span>
-                    </li>
-                    <li>
-                        <div class="lianyi">
-                            <i></i>
-                        </div>
-                        <span>
-						<font>联谊</font>
-					</span>
-                    </li>
-                    <li>
-                        <div class="ktv">
-                            <i></i>
-                        </div>
-                        <span>
-						<font>KTV</font>
-					</span>
-                    </li>
+    <div class="ebh-team-title">
+        <font>欢迎进入团队创建页面</font>
+    </div>
+    <div class="ebh-team-photo">
 
-                </ul>
-                <i></i>
+        <span class="ebh-photo">
+            <div class="aui-list-item-media">
+                <img src="../../image/logo/12.png" class="aui-img-round aui-list-img-sm">
             </div>
-
-            <input type="text" placeholder="地点"/>
-            <input type="text" placeholder="时间"/>
-        </div>
-        <div class="pfp-text-area">
-            <textarea name="pfp-text" placeholder="正文，简述内容"></textarea>
-            <span></span>
-        </div>
+        </span>
+        <a href="#"><i class="icon-camera"></i><font id="logo">更换头像</font></a>
+    </div>
+    <div class="ebh-team-form">
         <ul>
-            <li><font>发布对象</font><i class="hmc-right-arrows"></i>
+            <li>
+                <div><font>名称：</font>
+                </div>
+                <div>
+                    <input type="text" id="name">
+                </div>
             </li>
-            <li><font>费用选项</font><i class="hmc-right-arrows"></i>
+            <!--<li>-->
+            <!--<div><font>区域：</font>-->
+            <!--</div>-->
+            <!--<div>-->
+            <!--<input type="text">-->
+            <!--</div>-->
+            <!--</li>-->
+
+            <li>
+                <div><font>标签：</font>
+                </div>
+                <div class="tag-list">
+                    <span><font>死神</font></span>
+                    <span><font>完美主义</font></span>
+                    <span class="tag-add">
+                        <i>+</i><font>添加标签</font>
+                    </span>
+                </div>
             </li>
-            <li><font>截止日期</font><i class="hmc-right-arrows"></i>
+            <li class="ebh-team-form-info">
+                <div><font>简介：</font>
+                </div>
+                <div>
+                    <textarea id="note"></textarea>
+                </div>
             </li>
         </ul>
     </div>
+    <ul class="aui-list aui-form-list">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                    选择类型
+                </div>
+                <div class="aui-list-item-input">
+                    <select id="type">
+                        <option value="music">音乐</option>
+                        <option value="play">娱乐</option>
+                        <option value="sport">运动</option>
+                        <option value="public">公益</option>
+                        <option value="job">兼职</option>
+                        <option value="learn">学研</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 </body>
 <script type="text/javascript" src="../../script/api.js"></script>
-<script type="text/javascript">
-    apiready = function () {
-
-    };
-</script>
+<script type="text/javascript" src="../../script/xcom.js"></script>
 
 </html>
