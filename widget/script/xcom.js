@@ -151,21 +151,20 @@ function SocietyList() {
             var html = '';
             for (x in ret.data) {
                 html += ''
-                    + '<div class="aui-media-list-item-inner">'
+                    + '<div class="aui-media-list-item-inner" onclick="confirm(' + '确认加入' + ',' + '确认加入该社团' + ',' + ret.data[x].id + ')">'
                     + '<div class="aui-list-item-media">'
                     + '<img src="../../image/logo/12.png" class="aui-img-round aui-list-img-sm">'
                     + '</div>'
                     + '<div class="aui-list-item-inner aui-list-item-arrow">'
                     + '<div class="aui-list-item-text">'
-                    + '<div class="aui-list-item-title aui-font-size-14">' + ret.data.name + '</div>'
-                    + '<div class="aui-list-item-right">' + ret.data.hot + '</div>'
+                    + '<div class="aui-list-item-title aui-font-size-14">' + ret.data[x].name + '</div>'
+                    + '<div class="aui-list-item-right">' + ret.data[x].hot + '</div>'
                     + '</div>'
                     + '<div class="aui-list-item-text">'
-                    + '+ret.data.note+'
+                    + ret.data[x].note
                     + '</div>'
                     + '</div>'
                     + '</div>';
-                // $api.byId('society-list').html(html);
                 $api.html($api.byId('society-list'), html);
             }
         } else {
@@ -175,4 +174,14 @@ function SocietyList() {
 
     api.hideProgress();
 
+}
+
+function confirm(title, msg, id) {
+    api.confirm({
+        title: title,
+        msg: msg,
+        buttons: ['确定', '取消']
+    }, function (ret, err) {
+        alert(id);
+    });
 }
