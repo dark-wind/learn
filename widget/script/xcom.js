@@ -114,7 +114,7 @@ function societyCreate() {
             if (ret.code == 'ok') {
                 api.openWin({
                     name: 'active',
-                    url: 'society_active.html',
+                    url: 'society_my_society.html',
                     animation: {
                         type: "push", //动画类型（详见动画类型常量）
                         duration: 400 //动画过渡时间，默认300毫秒
@@ -127,6 +127,52 @@ function societyCreate() {
     });
 
     api.hideProgress();
+}
 
+function SocietyList() {
+    api.showProgress({
+        style: 'default',
+        animationType: 'fade',
+        title: '努力加载中...',
+        text: '先喝杯茶...',
+        modal: false
+    });
+    api.ajax({
+        url: serve + '/society/list',
+        method: 'get',
+        data: {
+            values: {
+                page: 1,
+                limit: 10
+            },
+        }
+    }, function (ret, err) {
+
+        if (ret) {
+            var html = '';
+            for (x in ret.data) {
+                html += ''
+                    + '<div class="aui-media-list-item-inner">'
+                    + '<div class="aui-list-item-media">'
+                    + '<img src="../../image/logo/12.png" class="aui-img-round aui-list-img-sm">'
+                    + '</div>'
+                    + '<div class="aui-list-item-inner aui-list-item-arrow">'
+                    + '<div class="aui-list-item-text">'
+                    + '<div class="aui-list-item-title aui-font-size-14">' + ret.data.name + '</div>'
+                    + '<div class="aui-list-item-right">' + ret.data.hot + '</div>'
+                    + '</div>'
+                    + '<div class="aui-list-item-text">'
+                    + '+ret.data.note+'
+                    + '</div>'
+                    + '</div>'
+                    + '</div>';
+                $api.byId('society-list').html(html);
+            }
+        } else {
+            api.alert({msg: '刷新失败，服务器可能开小差了'});
+        }
+    });
+
+    api.hideProgress();
 
 }
