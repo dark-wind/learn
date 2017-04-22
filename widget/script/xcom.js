@@ -184,7 +184,11 @@ function confirm(id) {
         msg: msg,
         buttons: ['确定', '取消']
     }, function (ret, err) {
-        api.alert({msg: JSON.stringify(ret)});
+        if (ret.buttonIndex == 1) {
+            api.alert({msg: '已确认'});
+            join(id);
+
+        }
     });
 }
 
