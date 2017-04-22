@@ -228,7 +228,7 @@ function UserSociety() {
     });
     api.ajax({
         url: serve + '/user/list',
-        method: 'get',
+        method: 'post',
         data: {
             values: {
                 // page: 1,
