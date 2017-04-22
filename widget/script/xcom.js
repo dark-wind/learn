@@ -184,8 +184,7 @@ function confirm(id) {
         msg: msg,
         buttons: ['确定', '取消']
     }, function (ret, err) {
-        alert(1);
-        alert({msg: JSON.stringify(ret)});
+        api.alert({msg: JSON.stringify(ret)});
         api.ajax({
             url: serve + '/society/apply',
             method: 'post',
@@ -196,7 +195,7 @@ function confirm(id) {
             }
         }, function (ret, err) {
             alert(2);
-            alert({msg: JSON.stringify(ret)});
+            api.alert({msg: JSON.stringify(ret)});
             if (ret) {
                 api.alert(ret.msg);
                 if (ret.code == 'ok') {
