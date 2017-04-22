@@ -192,8 +192,8 @@ function confirm(id) {
                     soicety_id: id,
                 },
             }
-        }, function (ret, err) {
-            api.alert({msg: JSON.stringify(ret)});
+        }, function (res, msg) {
+            api.alert({msg: JSON.stringify(res)});
             if (ret) {
                 api.alert(ret.msg);
                 if (ret.code == 'ok') {
