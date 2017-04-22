@@ -150,8 +150,10 @@ function SocietyList() {
         if (ret) {
             var html = '';
             for (x in ret.data) {
+                var title = '确认加入';
+                var content = '确认加入该社团';
                 html += ''
-                    + '<div class="aui-media-list-item-inner" onclick="confirm(' + '确认加入' + ',' + '确认加入该社团' + ',' + ret.data[x].id + ')">'
+                    + '<div class="aui-media-list-item-inner" onclick="confirm(' + title + ',' + content + ',' + ret.data[x].id + ')">'
                     + '<div class="aui-list-item-media">'
                     + '<img src="../../image/logo/12.png" class="aui-img-round aui-list-img-sm">'
                     + '</div>'
