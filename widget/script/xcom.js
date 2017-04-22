@@ -202,7 +202,7 @@ function join(id) {
         }
     }, function (ret, msg) {
         api.alert({msg: JSON.stringify(ret)});
-        api.closeWin();
+        api.closeFrame();
 
         // api.openWin({
         //     name: 'user',
