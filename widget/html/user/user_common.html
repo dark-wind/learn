@@ -63,7 +63,7 @@
      * 我的社团
      */
     function mySociety() {
-        location.reload();
+
         api.openFrame({
             name: 'mysociety',
             url: 'user_my_society.html',
@@ -76,7 +76,8 @@
             pageParam: {
                 name: 'mysociety'
             },
-            bounces: false
+            bounces: false,
+            reload: true
         });
         changeIndexFrame(1);
         UserSociety();

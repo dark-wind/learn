@@ -204,6 +204,7 @@ function join(id) {
         api.alert({msg: JSON.stringify(ret)});
         api.closeFrame();
 
+
         // api.openWin({
         //     name: 'user',
         //     url: './html/user/user_common.html',
