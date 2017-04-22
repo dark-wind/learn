@@ -236,7 +236,7 @@ function UserSociety() {
             },
         }
     }, function (ret, err) {
-
+        api.alert({msg: JSON.stringify(ret)});
         if (ret) {
             var html = '';
             for (x in ret.data) {
