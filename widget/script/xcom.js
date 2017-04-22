@@ -43,7 +43,7 @@ function login() {
     }, function (ret, err) {
         if (ret) {
             //todo 删除
-            ret.role = 'society';
+            ret.role = 'admin';
             if (ret.role == 'user') {
                 api.openWin({
                     name: 'user',
