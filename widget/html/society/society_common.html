@@ -24,6 +24,10 @@
         <i class="aui-iconfont aui-icon-like"></i>
         <div class="aui-bar-tab-label">我的社团</div>
     </div>
+    <div class="aui-bar-tab-item" style="color: red" onclick="create()" tapmode>
+        <i class="aui-iconfont aui-icon-plus"></i>
+        <div class="aui-bar-tab-label">创建社团</div>
+    </div>
     <div class="aui-bar-tab-item" onclick="message()" tapmode>
         <i class="aui-iconfont aui-icon-comment"></i>
         <div class="aui-bar-tab-label">消息群发</div>
@@ -44,7 +48,7 @@
     function active() {
         api.openFrame({
             name: 'active',
-            url: 'society_apply.html',
+            url: 'society_active.html',
             rect: {
                 x: 0,
                 y: 0,
@@ -64,7 +68,7 @@
     function mySociety() {
         api.openFrame({
             name: 'mysociety',
-            url: 'user_my_society.html',
+            url: 'society_my_society.html',
             rect: {
                 x: 0,
                 y: 0,
@@ -78,6 +82,26 @@
         });
         changeIndexFrame(1);
     }
+
+
+    function create() {
+        api.openFrame({
+            name: 'create',
+            url: 'society_apply.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: api.frameHeight - 45 - footerPos.h
+            },
+            pageParam: {
+                name: 'apply'
+            },
+            bounces: false
+        });
+        changeIndexFrame(2);
+    }
+
     /**
      * 消息
      */
@@ -96,7 +120,7 @@
             },
             bounces: false
         });
-        changeIndexFrame(2);
+        changeIndexFrame(3);
     }
     /**
      * 个人中心
@@ -116,8 +140,9 @@
             },
             bounces: false
         });
-        changeIndexFrame(3);
+        changeIndexFrame(4);
     }
+
     //导航节点获取
     var aFooterList = $api.domAll('#footer .aui-bar-tab-item');
     /**
@@ -135,7 +160,7 @@
         ;
     };
     apiready = function () {
-        active();
+        mySociety();
     };
 </script>
 </html>

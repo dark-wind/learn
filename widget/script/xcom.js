@@ -88,7 +88,6 @@ function societyCreate() {
     var logo = '12';
     var label = '死神，完美主义';
     var note = $api.byId('note').value;
-    // var type = 'music';
     var type = $api.byId('society-type').value;
     api.showProgress({
         style: 'default',
@@ -110,8 +109,8 @@ function societyCreate() {
             },
         }
     }, function (ret, err) {
+        api.alert({msg: ret.msg});
         if (ret) {
-            api.alert({msg: 1});
             if (ret.code == 'ok') {
                 api.openWin({
                     name: 'active',
@@ -123,7 +122,7 @@ function societyCreate() {
                 });
             }
         } else {
-            api.alert({msg: 2});
+            api.alert({msg: '添加失败，服务器可能开小差了'});
         }
     });
 
