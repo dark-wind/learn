@@ -86,8 +86,8 @@ function societyCreate() {
     var logo = '12';
     var label = '死神，完美主义';
     var note = $api.byId('note').value;
-    var type = 'music';
-    // var type = $api.byId('type').value;
+    // var type = 'music';
+    var type = $api.byId('society-type').value;
     api.showProgress({
         style: 'default',
         animationType: 'fade',
@@ -96,7 +96,7 @@ function societyCreate() {
         modal: false
     });
     api.ajax({
-        url: serve + '/user/login',
+        url: serve + '/society/add',
         method: 'post',
         data: {
             values: {
@@ -104,12 +104,12 @@ function societyCreate() {
                 logo: logo,
                 label: label,
                 note: note,
-                type: type,
+                type: type
             },
         }
     }, function (ret, err) {
         if (ret) {
-            api.alert({msg: ret.msg});
+            api.alert({msg: JSON.stringify(ret)});
             if (ret.code == 'ok') {
                 api.openWin({
                     name: 'active',
