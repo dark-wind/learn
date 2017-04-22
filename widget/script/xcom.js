@@ -192,13 +192,13 @@ function confirm(id) {
     });
 }
 
-function join() {
+function join(id) {
     api.ajax({
         url: serve + '/society/apply',
         method: 'post',
         data: {
             values: {
-                soicety_id: id,
+                society_id: id,
             },
         }
     }, function (ret, msg) {
