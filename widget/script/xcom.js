@@ -202,7 +202,14 @@ function join(id) {
         }
     }, function (ret, msg) {
         api.alert({msg: JSON.stringify(ret)});
-        mySociety();
+        api.openWin({
+            name: 'user',
+            url: './html/user/user_common.html',
+            animation: {
+                type: "push", //动画类型（详见动画类型常量）
+                duration: 400 //动画过渡时间，默认300毫秒
+            }
+        });
         // if (ret) {
         //     if (ret.code == 'ok') {
         //         api.openWin({
