@@ -101,22 +101,26 @@
 <script type="text/javascript" src="../../script/xcom.js"></script>
 <script type="text/javascript">
     apiready = function () {
-        function joinSociety() {
-            api.openFrame({
-                name: 'societyList',
-                url: 'user_society_list.html',
-                rect: {
-                    x: 0,
-                    y: 0,
-                    w: 'auto',
-                    h: api.frameHeight - 45 - footerPos.h
-                },
-                pageParam: {
-                    name: 'info'
-                },
-                bounces: false
-            });
-        }
+
     };
+    function joinSociety() {
+        var footer = $api.byId('footer');
+        var footerPos = $api.offset(footer);
+        api.openFrame({
+            name: 'societyList',
+            url: 'user_society_list.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+//                h: api.frameHeight - 45 - footerPos.h
+                h: api.frameHeight - 45 - 30
+            },
+            pageParam: {
+                name: 'info'
+            },
+            bounces: false
+        });
+    }
 </script>
 </html>
