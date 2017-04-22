@@ -25,7 +25,7 @@
 <section class="aui-content-padded">
     <div class="aui-card-list">
         <div class="aui-card-list-content">
-            <ul class="aui-list aui-media-list">
+            <ul class="aui-list aui-media-list" id="society-list">
                 <li class="aui-list-item aui-list-item-middle">
                     <div class="aui-media-list-item-inner">
                         <div class="aui-list-item-media">
@@ -101,7 +101,7 @@
 <script type="text/javascript" src="../../script/xcom.js"></script>
 <script type="text/javascript">
     apiready = function () {
-
+        UserSociety();
     };
     function joinSociety() {
         var footer = $api.byId('footer');
