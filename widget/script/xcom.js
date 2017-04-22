@@ -165,7 +165,8 @@ function SocietyList() {
                     + '</div>'
                     + '</div>'
                     + '</div>';
-                $api.byId('society-list').html(html);
+                // $api.byId('society-list').html(html);
+                $api.html($api.byId('society-list'), html);
             }
         } else {
             api.alert({msg: '刷新失败，服务器可能开小差了'});
