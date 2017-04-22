@@ -42,6 +42,8 @@ function login() {
         }
     }, function (ret, err) {
         if (ret) {
+            //todo 删除
+            ret.role = 'society';
             if (ret.role == 'user') {
                 api.openWin({
                     name: 'user',
@@ -109,7 +111,7 @@ function societyCreate() {
         }
     }, function (ret, err) {
         if (ret) {
-            api.alert({msg: JSON.stringify(ret)});
+            api.alert({msg: 1});
             if (ret.code == 'ok') {
                 api.openWin({
                     name: 'active',
@@ -121,7 +123,7 @@ function societyCreate() {
                 });
             }
         } else {
-            api.alert({msg: JSON.stringify(err)});
+            api.alert({msg: 2});
         }
     });
 
