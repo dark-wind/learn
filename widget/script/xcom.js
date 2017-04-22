@@ -201,10 +201,9 @@ function join() {
                 soicety_id: id,
             },
         }
-    }, function (res, msg) {
-        api.alert({msg: JSON.stringify(res)});
+    }, function (ret, msg) {
+        api.alert({msg: JSON.stringify(ret)});
         if (ret) {
-            api.alert(ret.msg);
             if (ret.code == 'ok') {
                 api.openWin({
                     name: 'society',
