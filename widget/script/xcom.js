@@ -184,30 +184,34 @@ function confirm(id) {
         msg: msg,
         buttons: ['确定', '取消']
     }, function (ret, err) {
-        api.ajax({
-            url: serve + '/society/apply',
-            method: 'post',
-            data: {
-                values: {
-                    soicety_id: id,
-                },
+        api.alert({msg: JSON.stringify(ret)});
+    });
+}
+
+function join() {
+    api.ajax({
+        url: serve + '/society/apply',
+        method: 'post',
+        data: {
+            values: {
+                soicety_id: id,
+            },
+        }
+    }, function (res, msg) {
+        api.alert({msg: JSON.stringify(res)});
+        if (ret) {
+            api.alert(ret.msg);
+            if (ret.code == 'ok') {
+                api.openWin({
+                    name: 'society',
+                    url: 'users_my_society.html',
+                    animation: {
+                        type: "push", //动画类型（详见动画类型常量）
+                        duration: 400 //动画过渡时间，默认300毫秒
+                    }
+                });
             }
-        }, function (res, msg) {
-            api.alert({msg: JSON.stringify(res)});
-            if (ret) {
-                api.alert(ret.msg);
-                if (ret.code == 'ok') {
-                    api.openWin({
-                        name: 'society',
-                        url: 'users_my_society.html',
-                        animation: {
-                            type: "push", //动画类型（详见动画类型常量）
-                            duration: 400 //动画过渡时间，默认300毫秒
-                        }
-                    });
-                }
-            }
-        });
+        }
     });
 }
 
