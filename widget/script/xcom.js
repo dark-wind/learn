@@ -87,6 +87,8 @@ function societyCreate() {
     var label = '死神，完美主义';
     var note = $api.byId('note').value;
     var type = $api.byId('type').value;
+    // var type=document.getElementById('type').value;
+    alert(type);
     api.showProgress({
         style: 'default',
         animationType: 'fade',
