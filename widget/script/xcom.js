@@ -185,7 +185,6 @@ function confirm(id) {
         buttons: ['确定', '取消']
     }, function (ret, err) {
         if (ret.buttonIndex == 1) {
-            api.alert({msg: '已确认'});
             join(id);
 
         }
@@ -202,6 +201,7 @@ function join(id) {
             },
         }
     }, function (ret, msg) {
+        api.alert({msg: JSON.stringify(ret)});
         if (ret) {
             if (ret.code == 'ok') {
                 api.openWin({
