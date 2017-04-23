@@ -248,41 +248,70 @@
                 phone: username,
                 code: code,
             }, function (ret, err) {
-                if (ret.status) {
-                    api.showProgress({
-                        title: '注册中...',
-                        modal: false
-                    });
-                    var model = api.require('model');
-                    model.config({
-                        appKey: 'F1A1F000-5AF0-13B5-B924-187D430F6C2E'
-                    });
-                    model.insert({
-                        class: 'user',
-                        value: {
-                            username: username,
-                            password: password,
-                            email: mail,
-                            nickname: nickname,
-                            mobile: username
+                api.showProgress({
+                    title: '注册中...',
+                    modal: false
+                });
+                var model = api.require('model');
+                model.config({
+                    appKey: 'F1A1F000-5AF0-13B5-B924-187D430F6C2E'
+                });
+                model.insert({
+                    class: 'user',
+                    value: {
+                        username: username,
+                        password: password,
+                        email: mail,
+                        nickname: nickname,
+                        mobile: username
+                    }
+                }, function (ret, err) {
+                    var msg = "";
+                    api.hideProgress();
+                    if (ret) {
+                        if (ret.username) {
+                            api.toast({
+                                msg: '注册成功'
+                            });
+                            api.closeWin({});
                         }
-                    }, function (ret, err) {
-                        var msg = "";
-                        api.hideProgress();
-                        if (ret) {
-                            if (ret.username) {
-                                api.toast({
-                                    msg: '注册成功'
-                                });
-                                api.closeWin({});
-                            }
-                        }
-                    });
-                } else {
-                    api.alert({
-                        msg: ' 验证失败，请查看验证码是否正确！'
-                    });
-                }
+                    }
+                });
+//                if (ret.status) {
+////                    api.showProgress({
+////                        title: '注册中...',
+////                        modal: false
+////                    });
+////                    var model = api.require('model');
+////                    model.config({
+////                        appKey: 'F1A1F000-5AF0-13B5-B924-187D430F6C2E'
+////                    });
+////                    model.insert({
+////                        class: 'user',
+////                        value: {
+////                            username: username,
+////                            password: password,
+////                            email: mail,
+////                            nickname: nickname,
+////                            mobile: username
+////                        }
+////                    }, function (ret, err) {
+////                        var msg = "";
+////                        api.hideProgress();
+////                        if (ret) {
+////                            if (ret.username) {
+////                                api.toast({
+////                                    msg: '注册成功'
+////                                });
+////                                api.closeWin({});
+////                            }
+////                        }
+////                    });
+//                } else {
+//                    api.alert({
+//                        msg: ' 验证失败，请查看验证码是否正确！'
+//                    });
+//                }
             });
         } else {
             api.alert({
