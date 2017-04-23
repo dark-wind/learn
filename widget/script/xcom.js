@@ -42,8 +42,6 @@ function login() {
         }
     }, function (ret, err) {
         if (ret) {
-            //todo 删除
-            ret.role = 'user';
             if (ret.role == 'user') {
                 api.openWin({
                     name: 'user',
@@ -203,28 +201,6 @@ function join(id) {
     }, function (ret, msg) {
         api.alert({msg: JSON.stringify(ret)});
         api.closeFrame();
-
-
-        // api.openWin({
-        //     name: 'user',
-        //     url: './html/user/user_common.html',
-        //     animation: {
-        //         type: "push", //动画类型（详见动画类型常量）
-        //         duration: 400 //动画过渡时间，默认300毫秒
-        //     }
-        // });
-        // if (ret) {
-        //     if (ret.code == 'ok') {
-        //         api.openWin({
-        //             name: 'society',
-        //             url: 'user_my_society.html',
-        //             animation: {
-        //                 type: "push", //动画类型（详见动画类型常量）
-        //                 duration: 400 //动画过渡时间，默认300毫秒
-        //             }
-        //         });
-        //     }
-        // }
     });
 }
 
