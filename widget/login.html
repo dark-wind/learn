@@ -158,6 +158,17 @@
             }
         });
     }
+    var push = api.require('push');
+    push.bind({
+        userName: 'testName',
+        userId: 'testId'
+    }, function(ret, err){
+        if( ret ){
+            alert( JSON.stringify( ret) );
+        }else{
+            alert( JSON.stringify( err) );
+        }
+    });
 
 
 
