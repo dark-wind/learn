@@ -67,6 +67,8 @@
     <div class="aui-title">
         登录
     </div>
+    <br>
+    <span onClick="toEat()" style="color: red">约饭神器</span>
 </header>
 <div class="form">
     <div class="aui-content aui-margin-b-15">
@@ -105,6 +107,7 @@
         <span class="aui-input-left" onClick="register()">快速注册</span>
         <span class="aui-input-addons" onClick="zhmm()">忘记密码？</span>
     </div>
+
 </div>
 </body>
 <script type="text/javascript" src="./script/api.js"></script>
@@ -138,6 +141,17 @@
         api.openWin({
             name: 'zhmm',
             url: './html/pwd_back.html',
+            animation: {
+                type: "push", //动画类型（详见动画类型常量）
+                duration: 400 //动画过渡时间，默认300毫秒
+            }
+        });
+    }
+
+    function toEat() {
+        api.openWin({
+            name: 'eat',
+            url: './html/eat.html',
             animation: {
                 type: "push", //动画类型（详见动画类型常量）
                 duration: 400 //动画过渡时间，默认300毫秒
