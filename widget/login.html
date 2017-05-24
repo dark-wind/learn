@@ -119,6 +119,18 @@
         $api.fixStatusBar(header);
         var headerPos = $api.offset(header);
         var body_h = $api.offset($api.dom('body')).h;
+
+        var push = api.require('push');
+        push.bind({
+            userName: 'testName',
+            userId: 'testId'
+        }, function(ret, err){
+            if( ret ){
+                alert( JSON.stringify( ret) );
+            }else{
+                alert( JSON.stringify( err) );
+            }
+        });
     }
     function gb() {
         api.closeWin();
@@ -158,17 +170,7 @@
             }
         });
     }
-    var push = api.require('push');
-    push.bind({
-        userName: 'testName',
-        userId: 'testId'
-    }, function(ret, err){
-        if( ret ){
-            alert( JSON.stringify( ret) );
-        }else{
-            alert( JSON.stringify( err) );
-        }
-    });
+
 
 
 
