@@ -22,7 +22,7 @@
         <i class="icon-header-return"></i>
     </div>
     <div class="header-right">
-        <font onclick="activeAdd()">发布</font>
+        <font onclick="openDialog('text')">发布</font>
     </div>
 </header>
 <div class="main">
@@ -31,7 +31,7 @@
             <input type="text" placeholder="主题（请用4-20字描述你的话题）"/>
             <div class="activity-list-icon">
                 <ul>
-                    <li>
+                    <li onclick="ybc()">
                         <div class="jucan">
                             <i></i>
                         </div>
@@ -76,22 +76,78 @@
             <span></span>
         </div>
         <ul>
-            <li><font>发布对象</font><i class="hmc-right-arrows"></i>
+            <li><font>费用选项</font>
+                <select name="" id="society-type">
+                    <option value="music" selected>会费</option>
+                    <option value="play">AA</option>
+                    <option value="sport">请客</option>
+                </select>
+
+
             </li>
-            <li><font>费用选项</font><i class="hmc-right-arrows"></i>
-            </li>
-            <li><font>截止日期</font><i class="hmc-right-arrows"></i>
-            </li>
+            <br><br><br><br><br><br><br><br>
         </ul>
     </div>
 </div>
+<footer class="aui-bar aui-bar-tab" id="footer">
+    <div class="aui-bar-tab-item" style="color: red" onclick="active()" tapmode>
+        <i class="aui-iconfont aui-icon-star"></i>
+        <div class="aui-bar-tab-label">活动发布</div>
+    </div>
+    <div class="aui-bar-tab-item " onclick="mySociety()" tapmode>
+        <i class="aui-iconfont aui-icon-like"></i>
+        <div class="aui-bar-tab-label">我的社团</div>
+    </div>
+    <div class="aui-bar-tab-item" onclick="create()" tapmode>
+        <i class="aui-iconfont aui-icon-plus"></i>
+        <div class="aui-bar-tab-label">创建社团</div>
+    </div>
+    <div class="aui-bar-tab-item" onclick="message()" tapmode>
+        <i class="aui-iconfont aui-icon-comment"></i>
+        <div class="aui-bar-tab-label">消息群发</div>
+    </div>
+    <div class="aui-bar-tab-item" onclick="info()" tapmode>
+        <i class="aui-iconfont aui-icon-my"></i>
+        <div class="aui-bar-tab-label">个人中心</div>
+    </div>
+</footer>
 
 </body>
 <script type="text/javascript" src="../../script/api.js"></script>
+<script type="text/javascript" src="../../script/jQuery/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="../../script/aui-dialog.js"></script>
 <script type="text/javascript">
-    apiready = function () {
+    var dialog = new auiDialog({})
+    function openDialog(type) {
+        switch (type) {
+//            case "text":
+//                dialog.alert({
+//                    title:"发布成功",
+//                    msg:'活动发布成功',
+//                    buttons:['确定']
+//                },function(ret){
+//                    console.log(ret)
+//                })
+//                break;
+            case "text":
+                dialog.alert({
+                    title: "发布成功",
+                    msg: '活动发布成功',
+                    buttons: ['确定']
+                }, function (ret) {
+                    if (ret) {
+                        location.href = 'list.html';
+                    }
+                })
+                break;
 
-    };
+        }
+    }
+
+    function ybc() {
+        $('.jucan').attr('style', 'border:3px solid red');
+    }
+
 </script>
 
 </html>

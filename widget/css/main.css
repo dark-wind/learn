@@ -1170,28 +1170,28 @@ nav ul li > div {
 .jucan i {
     width: 1.25em;
     height: 1.25em;
-    background: url(../images/hmc-icon-jucan.png) no-repeat center;
+    background: url(../image/hmc-icon-jucan.png) no-repeat center;
     background-size: contain;
 }
 
 .yepao i {
     width: 1.125em;
     height: 1.3125em;
-    background: url(../images/hmc-icon-yepao.png) no-repeat center;
+    background: url(../image/hmc-icon-yepao.png) no-repeat center;
     background-size: contain;
 }
 
 .lianyi i {
     width: 1.1875em;
     height: 1.4375em;
-    background: url(../images/hmc-icon-lianyi.png) no-repeat center;
+    background: url(../image/hmc-icon-lianyi.png) no-repeat center;
     background-size: contain;
 }
 
 .ktv i {
     width: 1.1875em;
     height: 1.4375em;
-    background: url(../images/hmc-icon-ktv.png) no-repeat center;
+    background: url(../image/hmc-icon-ktv.png) no-repeat center;
     background-size: contain;
 }
 
